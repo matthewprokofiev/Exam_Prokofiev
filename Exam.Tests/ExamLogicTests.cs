@@ -4,11 +4,6 @@ using Exam;
 
 namespace Exam.Tests
 {
-    /// <summary>
-    /// Автоматизированные тесты класса логики ExamLogic.
-    /// Тестируются только методы класса логики. Набор покрывает:
-    /// корректные данные, граничные значения и некорректные данные (исключения).
-    /// </summary>
     [TestClass]
     public class ExamLogicTests
     {
@@ -161,7 +156,6 @@ namespace Exam.Tests
         [TestMethod]
         public void Scenario_BU_FullScore_GivesGrade5()
         {
-            // БУ: 10 + 15 + 25 = 50 из 50 -> 100% -> 5
             int total = ExamLogic.ValidateScore(10, 1)
                       + ExamLogic.ValidateScore(15, 2)
                       + ExamLogic.ValidateScore(25, 3);
@@ -175,7 +169,6 @@ namespace Exam.Tests
         [TestMethod]
         public void Scenario_PU_LowScore_GivesGrade2()
         {
-            // ПУ: 10 из 75 -> ~13% -> 2
             int max = ExamLogic.GetMaxScore("ПУ");
             double percent = ExamLogic.CalculatePercent(10, max);
 
